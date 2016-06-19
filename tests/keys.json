@@ -1,0 +1,1 @@
+{"url": "http://172.16.l1.5:5000/v2.0/tokens","method": "Get","header": "Content-Type: application/json","timeout": 10,"expected": {"status": 200},"data": {"auth":{"passwordCredentials":{"username": "admin", "password": "V21lxTa05JaX"},"tenantName": "demo"}}}

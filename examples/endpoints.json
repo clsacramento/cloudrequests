@@ -1,0 +1,115 @@
+[
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:35357/v2.0"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:90959/api/v1/"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:35357/9090"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:87749/v2/81330c749d02425593466ed5cc8f90f5"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:8080/v1/AUTH_81330c749d02425593466ed5cc8f90f5"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:9292"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:21131/v1"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:8777"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:8776/v1/81330c749d02425593466ed5cc8f90f5"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:80"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:8004/v1/81330c749d02425593466ed5cc8f90f5"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:8070/v2.0"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:9696"
+    },
+    {
+        "expected": {
+            "status": 200
+        },
+        "method": "Get",
+        "timeout": 10,
+        "url": "http://172.16.90.2:8776/v2/81330c749d02425593466ed5cc8f90f5"
+    }
+]
+

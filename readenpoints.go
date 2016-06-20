@@ -2,7 +2,7 @@ package cloudrequests
 
 import(
 	"fmt"
-	"encoding/json"
+//	"encoding/json"
 	"io/ioutil"
 	"github.com/Jeffail/gabs"
 //	"github.com/clsacramento"
@@ -22,15 +22,30 @@ func GetEndpointsFromFile(filename string) ([]Endpoint,error) {
 
 func GetEndpointListFromJSON(jsonbytes []byte) ([]Endpoint,error) {
 	ends := make([]Endpoint,0)
-	err := json.Unmarshal(jsonbytes, &ends)
-	
+	jsonParsed, err := gabs.ParseJSON(jsonbytes)
+        if err != nil {
+                return nil,err
+        }
+	children, _ := jsonParsed.S("endpoints").Children()
+	for _, child := range children {
+		end := parseEndpoint(child)
+		ends = append(ends,end)
+	}	
 	return ends, err
 }
 
 func GetEndpointFromJSON(jsonbytes []byte) (Endpoint,error){
 	var end Endpoint
-//	err := json.Unmarshal(jsonbytes, &end)
 	jsonParsed, err := gabs.ParseJSON(jsonbytes)
+	if err != nil {
+		return end,err
+	}
+	end = parseEndpoint(jsonParsed)
+	return end,err 
+}
+
+func parseEndpoint(jsonParsed *gabs.Container) Endpoint {
+	var end Endpoint
 	url, ok := jsonParsed.Path("url").Data().(string)
 	fmt.Println(url)
 	if ok {
@@ -47,10 +62,7 @@ func GetEndpointFromJSON(jsonbytes []byte) (Endpoint,error){
 	data := jsonParsed.Path("data").String()
 	fmt.Println("what "+data)
 	end.Data = data
-//	if ok {
-//		fmt.Println("data ",data)
-//		end.Data = data
-//	}
+
 	method, ok := jsonParsed.Path("method").Data().(string)
 	if ok {
 		end.Method = method
@@ -76,7 +88,7 @@ func GetEndpointFromJSON(jsonbytes []byte) (Endpoint,error){
 		end.Expected.Data = expected_data
 	}	
 	
-	return end, err
+	return end
 }
 
 //func main() {

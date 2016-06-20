@@ -18,8 +18,9 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", hello)
+	http.HandleFunc("/helo/", hello)
 	http.HandleFunc("/end/", cloudrequests.CollectEndpoint)
+	http.HandleFunc("/listends/", cloudrequests.CollectEndpointList)
 	fmt.Println("Listening starts on port 8080:")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8088", nil)
 }
